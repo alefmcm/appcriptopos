@@ -1,2 +1,8 @@
+Instale dependências:
+
 pip install -r requirements.txt
-streamlit run app.py
+
+
+Rode o app:
+
+streamlit run app_streamlit.py
