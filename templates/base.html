@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Comunicação Segura</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fafafa;
+      }
+      header {
+        background: #222;
+        color: #fff;
+        padding: 10px 20px;
+      }
+      header h1 {
+        display: inline-block;
+        margin: 0;
+        font-size: 1.2em;
+      }
+      nav {
+        display: inline-block;
+        margin-left: 40px;
+      }
+      nav a {
+        color: #fff;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      main {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        border-radius: 6px;
+      }
+      .flash {
+        background: #e0ffe0;
+        border: 1px solid #b0ffb0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+      input, textarea, select, button {
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 600px;
+      }
+      button {
+        background: #2b7cff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1a5cd8;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Comunicação Segura</h1>
+      <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('register') }}">Registrar Usuário</a>
+        <a href="{{ url_for('send') }}">Enviar Mensagem</a>
+        <a href="{{ url_for('inbox') }}">Inbox</a>
+      </nav>
+    </header>
+    <main>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash">
+            {% for m in messages %}
+              <div>{{ m }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
