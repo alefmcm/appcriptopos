@@ -16,5 +16,5 @@ Participantes:
 
 - Alef Melo
 - Felipe Batista
--
+- Lucas Marciano
 - Ítalo Covas
