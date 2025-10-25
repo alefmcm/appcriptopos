@@ -15,6 +15,6 @@ python -m streamlit run app.py
 Participantes:
 
 - Alef Melo
--
+- Felipe Batista
 -
 - Ítalo Covas
