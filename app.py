@@ -6,7 +6,10 @@ from crypto import generate_rsa_keypair, hybrid_encrypt, hybrid_decrypt
 st.set_page_config(page_title="Comunicação Segura", layout="centered")
 models.init_db()
 
-st.title("🔐 Comunicação Segura (RSA-OAEP + AES-GCM + PSS)")
+col1, col2, col3 = st.columns([1,1,1])
+with col2:
+    st.image("assets/logo.png", width=500)
+st.title("Comunicação Segura (RSA-OAEP + AES-GCM + PSS)")
 
 tabs = st.tabs(["Registrar Usuário", "Enviar Mensagem", "Inbox", "Chaves / Export"])
 
